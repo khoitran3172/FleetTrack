@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Background color */
+}
+
+.login-container {
+    display: flex; /* Use flexbox for two columns */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    border-radius: 0; /* No rounded corners for full-screen */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image-section {
+    flex: 1; /* Image section takes up half the space */
+    background-color: #000; /* Optional background color for image section */
+}
+
+.image-section img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container without distortion */
+}
+
+.form-section {
+    flex: 1; /* Form section takes up half the space */
+    display: flex; /* Center contents vertically and horizontally */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    background-color: #fff; /* Background color for form section */
+    padding: 20px; /* Padding around the form */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.form-section h1 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2em; /* Font size for the title */
+}
+
+.form-group {
+    width: 100%; /* Full width for form groups */
+    margin-bottom: 15px; /* Space below each form group */
+}
+
+.form-group label {
+    display: block; /* Each label on a new line */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.form-group input {
+    width: 100%; /* Full width of the input field */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.login-button {
+    width: 100%; /* Full width for the button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1em; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
