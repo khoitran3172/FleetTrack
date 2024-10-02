@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import './App.css'; 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Home from './pages/Home';
+import AddVehicle from './pages/AddVehicle';
+import AddTrip from './pages/AddTrip'; // Bạn cần tạo trang này
+import VehicleList from './pages/VehicleList'; // Bạn cần tạo trang này
+import TripList from './pages/TripList'; // Bạn cần tạo trang này
+import Registration from './pages/Registration'; // Bạn cần tạo trang này
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
+        <div className="content" id="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/add-vehicle" element={<AddVehicle />} />
+            <Route path="/add-trip" element={<AddTrip />} />
+            <Route path="/vehicle-list" element={<VehicleList />} />
+            <Route path="/trip-list" element={<TripList />} />
+            <Route path="/registration" element={<Registration />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
