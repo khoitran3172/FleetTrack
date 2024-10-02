@@ -5,6 +5,13 @@ import "./Home.css";
 const AddVehicle = () => {
   const API = "https://66fd4c81c3a184a84d19e7ca.mockapi.io/api/Xe";
   const [vehicleModule, setVehicleModule] = useState("");
+  const [SoKhungModule, setSoKhungModule] = useState("");
+  const [HangModule, setHangModule] = useState("");
+  const [BienSoModule, setBienSoModule] = useState("");
+  const [NhienLoaiModule, setNhienLoaiModule] = useState("");
+  const [NamModule, setNamModule] = useState("");
+  const [LoaiXeModule, setLoaiXeModule] = useState("");
+  const [MauSacModule, setMauSacModule] = useState("");
   const [apiError, setApiError] = useState(""); // Track API errors
 
   const SaveData = async (e) => {
@@ -15,18 +22,19 @@ const AddVehicle = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ vehicleModule }),
+        body: JSON.stringify({ vehicleModule,SoKhungModule,HangModule,BienSoModule,NhienLoaiModule,NamModule,LoaiXeModule,MauSacModule }),
+    
       });
 
       if (response.ok) {
-        alert("Registration successful");
+        alert("Thêm phương tiện thành công");
       } else {
-        setApiError("Error registering user");
+        setApiError("Thêm phương tiện thất bại");
       }
     } catch (error) {
-      setApiError("Error connecting to the server");
+      setApiError("Không thể kết nối đến server");
     }
-    console.log(vehicleModule);
+    // console.log(vehicleModule);
   };
   return (
     <div>
@@ -46,21 +54,36 @@ const AddVehicle = () => {
             </div>
             <div className="form-group">
               <label htmlFor="chassis-number">Số khung:</label>
-              <input type="text" id="chassis-number" name="chassis-number" />
+              <input 
+              type="text" 
+              id="chassis-number"
+              name="chassis-number" 
+              value={SoKhungModule}
+              onChange={(e) => setSoKhungModule(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="manufacturer">Hãng sản xuất:</label>
-              <input type="text" id="manufacturer" name="manufacturer" />
+              <input type="text" id="manufacturer" name="manufacturer" 
+                              value={HangModule}
+                              onChange={(e) => setHangModule(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="license-plate">Biển số:</label>
-              <input type="text" id="license-plate" name="license-plate" />
+              <input type="text" id="license-plate" name="license-plate" 
+                              value={BienSoModule}
+                              onChange={(e) =>setBienSoModule(e.target.value)}
+              />
             </div>
           </div>
           <div className="form-column">
             <div className="form-group">
               <label htmlFor="fuel-type">Loại nhiên liệu tiêu thụ:</label>
-              <input type="text" id="fuel-type" name="fuel-type" />
+              <input type="text" id="fuel-type" name="fuel-type" 
+                                value={NhienLoaiModule}
+                                onChange={(e) => setNhienLoaiModule(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="manufacture-year">Năm sản xuất:</label>
@@ -68,15 +91,21 @@ const AddVehicle = () => {
                 type="text"
                 id="manufacture-year"
                 name="manufacture-year"
+                value={NamModule}
+                onChange={(e) =>setNamModule(e.target.value)}
               />
             </div>
             <div className="form-group">
               <label htmlFor="vehicle-type">Loại xe:</label>
-              <input type="text" id="vehicle-type" name="vehicle-type" />
+              <input type="text" id="vehicle-type" name="vehicle-type" 
+                              value={LoaiXeModule}
+                              onChange={(e) => setLoaiXeModule(e.target.value)}/>
             </div>
             <div className="form-group">
               <label htmlFor="color">Màu sắc:</label>
-              <input type="text" id="color" name="color" />
+              <input type="text" id="color" name="color" 
+                              value={MauSacModule}
+                              onChange={(e) => setMauSacModule(e.target.value)}/>
             </div>
           </div>
         </div>
