@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{flex:'30%'}}>
       <h2 onClick={() => window.location.reload()}>FleetTrack</h2>
       <Link to="/" className="add-btn">Home</Link>
       <Link to="/add-vehicle" className="add-btn">Add Vehicle</Link>

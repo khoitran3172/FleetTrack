@@ -18,9 +18,9 @@ function App() {
 
   return (
     <Router>
-      <div style={{ display: 'flex' }}>
-        {isLoggedIn && <Sidebar />} {/* Show sidebar only when logged in */}
-        <div className="content" id="content">
+      <div style={{ display: 'flex',width:'100vw' }}>
+        {<Sidebar />} {/* Show sidebar only when logged in */}
+        <div className="content" id="content" style={{flex:'70%'}} >
           <Routes>
             <Route 
               path="/" 
@@ -30,7 +30,7 @@ function App() {
               path="/home" 
               element={isLoggedIn ? <Home /> : <Navigate to="/" />} 
             />
-            <Route path="/add-vehicle" element={isLoggedIn ? <AddVehicle /> : <Navigate to="/" />} />
+            <Route path="/add-vehicle" element=<AddVehicle/>/>
             <Route path="/add-trip" element={isLoggedIn ? <AddTrip /> : <Navigate to="/" />} />
             <Route path="/vehicle-list" element={isLoggedIn ? <VehicleList /> : <Navigate to="/" />} />
             <Route path="/trip-list" element={isLoggedIn ? <TripList /> : <Navigate to="/" />} />
