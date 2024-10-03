@@ -4,8 +4,9 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home-page">
     
+    
+    <div className="home-page">
       <div className="main-content">
         <div className="content">
           <h1>Chào mừng đến với FleetTrack</h1>
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
