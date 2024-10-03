@@ -3,26 +3,26 @@ import axios from "axios";
 import "./Home.css";
 
 const TripList = () => {
-  const API = "https://66fd4c81c3a184a84d19e7ca.mockapi.io/api/Xe";
-  const [vehicles, setVehicles] = useState([]); // State để chứa dữ liệu phương tiện
+  const API = "https://66850e3656e7503d1ae22ace.mockapi.io/api/demo/TRIP";
+  const [trips, setTrips] = useState([]); // State để chứa dữ liệu chuyến đi
   const [apiError, setApiError] = useState(""); // State để theo dõi lỗi từ API
 
   // Fetch dữ liệu từ API khi component được load
   useEffect(() => {
-    const fetchVehicles = async () => {
+    const fetchTrips = async () => {
       try {
         const response = await axios.get(API);
-        setVehicles(response.data); // Cập nhật dữ liệu phương tiện
+        setTrips(response.data); // Cập nhật dữ liệu chuyến đi
       } catch (error) {
         setApiError("Không thể kết nối đến server");
       }
     };
-    fetchVehicles();
+    fetchTrips();
   }, []);
 
   return (
     <div>
-      <h1>Danh sách phương tiện</h1>
+      <h1>Danh sách chuyến đi</h1>
 
       {apiError && <p>{apiError}</p>} {/* Hiển thị lỗi nếu có */}
 
@@ -30,28 +30,24 @@ const TripList = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Mẫu xe</th>
-            <th>Số Khung</th>
-            <th>Hãng sản xuất</th>
-            <th>Biển số</th>
-            <th>Loại nhiên liệu</th>
-            <th>Năm sản xuất</th>
-            <th>Loại xe</th>
-            <th>Màu sắc</th>
+            <th>Phương tiện</th>
+            <th>Tài xế</th>
+            <th>Điểm xuất phát</th>
+            <th>Điểm đến</th>
+            <th>Thời gian khởi hành</th>
+            <th>Thời gian kết thúc</th>
           </tr>
         </thead>
         <tbody>
-          {vehicles.map((vehicle, index) => (
+          {trips.map((trip, index) => (
             <tr key={index}>
-              <td>{vehicle.id}</td> {/* Sử dụng `id` nếu API trả về `id` */}
-              <td>{vehicle.vehicleModule}</td>
-              <td>{vehicle.SoKhungModule}</td>
-              <td>{vehicle.HangModule}</td>
-              <td>{vehicle.BienSoModule}</td>
-              <td>{vehicle.NhienLoaiModule}</td>
-              <td>{vehicle.NamModule}</td>
-              <td>{vehicle.LoaiXeModule}</td>
-              <td>{vehicle.MauSacModule}</td>
+              <td>{trip.id}</td>
+              <td>{trip.vehicle}</td>
+              <td>{trip.Taixe}</td>
+              <td>{trip.Diemxuatphat}</td>
+              <td>{trip.Diemden}</td>
+              <td>{trip.Tgiankhoihanh}</td>
+              <td>{trip.Tgianketthuc}</td>
             </tr>
           ))}
         </tbody>
