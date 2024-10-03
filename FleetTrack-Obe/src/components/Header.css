@@ -1,0 +1,23 @@
+.header {
+    background-color: #fce8e8; /* Màu nền giống trong ảnh */
+    height: 50px; /* Chiều cao của header */
+    display: flex;
+    justify-content: flex-end; /* Canh các icon về phía bên phải */
+    align-items: center;
+    padding: 0 20px; /* Khoảng cách giữa các icon và cạnh */
+    border-bottom: 3px solid #0078d7; /* Đường viền dưới màu xanh */
+}
+
+.icons a {
+    color: #333; /* Màu sắc của icon */
+    margin-left: 20px; /* Khoảng cách giữa các icon */
+    font-size: 24px; /* Kích thước icon */
+}
+
+.icons a:hover {
+    color: #000; /* Đổi màu khi hover */
+}
+
+.fa {
+    cursor: pointer; /* Chỉ ra rằng có thể nhấp vào icon */
+}
