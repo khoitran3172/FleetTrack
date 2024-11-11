@@ -1,6 +1,7 @@
 const API = {
-  vehicleList: "https://672b35f0976a834dd0261247.mockapi.io/vehicle",
-  tripList: "", // TO-DO
-}
+  vehicleList: "http://localhost:5000/api/vehicles",
+  vehicleById: (id: string) => `http://localhost:5000/api/vehicles/${id}`,
+  vehicleImageById: (id: string) => `http://localhost:5000/api/vehicles/${id}/image`,
+};
 
 export default API;
